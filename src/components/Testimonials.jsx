@@ -35,7 +35,10 @@ export default function Testimonials() {
       <Reveal>
         <Eyebrow n="06">From the stands</Eyebrow>
         <h2 className="h2">Word gets around.</h2>
-        <p className="mt-4 text-ink-2">Tap the stack to read the next one.</p>
+        <p className="mt-4 max-w-[420px] text-ink-2">
+          Schools, clubs and developers on what it was like to build with us, from the first site visit
+          to the day their players stepped on court. Tap the stack to read the next one.
+        </p>
       </Reveal>
 
       <div

@@ -12,7 +12,10 @@ export function Clients() {
             <Eyebrow>Trusted by</Eyebrow>
             <h2 className="h2">Built for names <span className="text-ink-3">you know.</span></h2>
           </div>
-          <p className="mt-3 max-w-[340px] text-ink-2">Developers, retailers and institutions who have trusted us with their grounds.</p>
+          <p className="mt-3 max-w-[380px] text-ink-2">
+            Developers, retailers and institutions who have trusted us with their grounds, and keep coming
+            back when the next campus, clubhouse or rooftop needs a court.
+          </p>
         </div>
 
         <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">

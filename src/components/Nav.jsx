@@ -6,16 +6,8 @@ import { Button } from './ui.jsx'
 
 export function Brand() {
   return (
-    <Link to="/" className="mr-auto flex items-center gap-2.5" aria-label="Equinox Sports Infra home">
-      <span className="grid w-[22px] gap-[3px]" aria-hidden="true">
-        <i className="h-[5px] rounded bg-ink" />
-        <i className="h-[5px] w-3/4 rounded bg-accent" />
-        <i className="h-[5px] w-1/2 rounded bg-ink" />
-      </span>
-      <span className="text-lg leading-none font-bold tracking-tight">
-        Equinox
-        <small className="mt-[3px] block text-[10px] font-medium tracking-[0.18em] text-ink-2 uppercase">Sports Infra</small>
-      </span>
+    <Link to="/" className="mr-auto flex items-center" aria-label="Equinox Sports Infra home">
+      <img src="/img/logo-dark.png" alt="Equinox Sports Infra" width="270" height="87" className="h-9 w-auto md:h-10" />
     </Link>
   )
 }

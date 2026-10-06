@@ -6,7 +6,8 @@
 
   --font-mono: "Google Sans Code", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
-  --color-bg: #f2f2f4;
+  --color-bg: #eef6f4;
+  --color-mint: #6ddbc5;
   --color-ink: #1c1e22;
   --color-ink-2: #5d636c;
   --color-ink-3: #9aa0a8;
@@ -50,6 +51,11 @@
     @apply bg-bg text-ink font-sans antialiased overflow-x-hidden;
     font-size: 15px;
     line-height: 1.65;
+    /* soft wash of the logo's mint, fading to near-white so it never feels loud */
+    background-image:
+      radial-gradient(1200px 700px at 85% -10%, rgb(109 219 197 / 0.18), transparent 70%),
+      radial-gradient(900px 600px at -10% 40%, rgb(109 219 197 / 0.10), transparent 70%);
+    background-attachment: fixed;
   }
   ::selection { @apply bg-accent text-white; }
   

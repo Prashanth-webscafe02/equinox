@@ -5,8 +5,8 @@ import { Eyebrow, Wrap } from './ui.jsx'
 
 const fieldOf = name => sports.find(s => s.name === name).field
 
-// Like the One UI "recent apps" screen: a swipeable row of app cards where the centre
-// card sits full size and its neighbours shrink and dim as they move away.
+// Like the One UI "recent apps" screen: a swipeable row of app cards where the leading
+// card sits full size and the ones after it shrink and dim as they move away.
 export default function Recents() {
   const track = useRef(null)
   const [active, setActive] = useState(0)
@@ -16,21 +16,21 @@ export default function Recents() {
     const el = track.current
     let frame
     const update = () => {
-      const mid = el.scrollLeft + el.clientWidth / 2
+      const start = el.scrollLeft + parseFloat(getComputedStyle(el).paddingLeft)
       let closest = 0
       let best = Infinity
       ;[...el.children].forEach((card, i) => {
-        const center = card.offsetLeft + card.offsetWidth / 2
-        const d = (center - mid) / card.offsetWidth // 0 at centre, ±1 one card away
+        const d = (card.offsetLeft - start) / card.offsetWidth // 0 at the leading edge, ±1 one card away
         const a = Math.min(Math.abs(d), 1.6)
         if (Math.abs(d) < best) { best = Math.abs(d); closest = i }
         if (reduceMotion()) return
-        card.style.transform = `scale(${1 - a * 0.12}) translateX(${-d * 6}%)`
+        card.style.transform = `scale(${1 - a * 0.12})`
         card.style.setProperty('--dim', String(a * 0.45))
       })
       setActive(closest)
     }
     const onScroll = () => { cancelAnimationFrame(frame); frame = requestAnimationFrame(update) }
+    el.scrollLeft = 0 // always open on the first card
     update()
     el.addEventListener('scroll', onScroll, { passive: true })
     window.addEventListener('resize', onScroll)
@@ -79,7 +79,7 @@ export default function Recents() {
   const go = i => {
     const el = track.current
     const card = el.children[Math.max(0, Math.min(builds.length - 1, i))]
-    el.scrollTo({ left: card.offsetLeft - (el.clientWidth - card.offsetWidth) / 2, behavior: 'smooth' })
+    el.scrollTo({ left: card.offsetLeft - parseFloat(getComputedStyle(el).paddingLeft), behavior: 'smooth' })
   }
 
   const arrow = 'glass grid size-11 cursor-pointer place-items-center rounded-full text-lg transition hover:scale-105 disabled:opacity-40'
@@ -89,7 +89,11 @@ export default function Recents() {
       <Wrap className="mb-6 flex items-end justify-between gap-6">
         <div>
           <Eyebrow>What we build</Eyebrow>
-          <p className="text-ink-2">Swipe through the grounds we lay, from running tracks to gym floors.</p>
+          <p className="max-w-[540px] text-ink-2">
+            Swipe through the grounds we lay, from running tracks to gym floors. Each one is planned around
+            the sport it hosts, built on a properly prepared base and finished with surfaces made to take
+            years of daily play.
+          </p>
         </div>
         <div className="hidden gap-2 md:flex">
           <button className={arrow} onClick={() => go(active - 1)} disabled={active === 0} aria-label="Previous">‹</button>
@@ -99,11 +103,17 @@ export default function Recents() {
 
       <div
         ref={track}
-        className="no-scrollbar flex snap-x snap-mandatory gap-4 overflow-x-auto py-4 select-none md:cursor-grab"
-        style={{ paddingInline: 'calc(50% - min(36vw, 190px))' }}
+        className="no-scrollbar flex snap-x snap-mandatory gap-4 overflow-x-auto py-4 [--pad:16px] sm:[--pad:24px] lg:[--pad:40px] select-none md:cursor-grab"
+        style={{
+          // first card lines up with the page gutter; the tail lets the last card reach that spot too
+          '--gutter': 'max(var(--pad), (100% - 1240px) / 2 + var(--pad))',
+          paddingLeft: 'var(--gutter)',
+          paddingRight: 'calc(100% - min(72vw, 380px) - var(--gutter))',
+          scrollPaddingLeft: 'var(--gutter)',
+        }}
       >
         {builds.map(b => (
-          <article key={b.name} className="w-[min(72vw,380px)] flex-none snap-center transition-transform duration-150 ease-out" style={{ '--dim': 0 }}>
+          <article key={b.name} className="w-[min(72vw,380px)] flex-none origin-left snap-start transition-transform duration-150 ease-out" style={{ '--dim': 0 }}>
             {/* app label above the card */}
             <div className="mb-3 flex items-center gap-2.5 px-1">
               <span className="grid size-8 place-items-center rounded-[10px] bg-ink shadow-soft">
