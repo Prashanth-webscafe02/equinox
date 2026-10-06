@@ -1,26 +1,37 @@
+import { Link } from 'react-router-dom'
 import { clients, contact } from '../data.js'
-import { Wrap } from './ui.jsx'
+import { sportPages } from '../sportPages.js'
+import { Eyebrow, Wrap } from './ui.jsx'
 
 export function Clients() {
-  const row = [...clients, ...clients] // doubled for a seamless loop
   return (
-    <section aria-label="Clients" className="pb-[clamp(80px,10vw,130px)]">
-      <Wrap><p className="eyebrow">Trusted by</p></Wrap>
-      <div className="group overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_10%,#000_90%,transparent)]">
-        <div className="flex w-max animate-marquee gap-4 group-hover:[animation-play-state:paused]">
-          {row.map((src, i) => (
-            <img key={i} src={src} alt={i < clients.length ? 'Client logo' : ''} aria-hidden={i >= clients.length}
-              className="h-24 w-[200px] rounded-card bg-white object-contain px-5 py-2.5 shadow-soft" />
-          ))}
+    <section aria-label="Clients">
+      <Wrap className="pb-[clamp(80px,10vw,130px)]">
+        <div className="mb-8 items-end justify-between gap-6 md:flex">
+          <div>
+            <Eyebrow>Trusted by</Eyebrow>
+            <h2 className="h2">Built for names <span className="text-ink-3">you know.</span></h2>
+          </div>
+          <p className="mt-3 max-w-[340px] text-ink-2">Developers, retailers and institutions who have trusted us with their grounds.</p>
         </div>
-      </div>
+
+        <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+          {clients.map(c => (
+            <li key={c.name}
+              className="group grid h-[120px] place-items-center rounded-card bg-white px-8 shadow-soft ring-1 ring-line transition duration-500 ease-ios hover:-translate-y-1 hover:shadow-lift last:col-span-2 sm:last:col-span-1">
+              <img src={c.src} alt={c.name} loading="lazy"
+                className="max-h-14 w-full object-contain opacity-70 mix-blend-multiply grayscale transition duration-500 group-hover:opacity-100 group-hover:grayscale-0" />
+            </li>
+          ))}
+        </ul>
+      </Wrap>
     </section>
   )
 }
 
 const columns = [
-  { title: 'Surfaces', links: [['Synthetic turf', '#surfaces'], ['Acrylic & PU', '#surfaces'], ['Vinyl & wooden', '#surfaces'], ['Tracks & EPDM', '#surfaces']] },
-  { title: 'Company', links: [['Services', '#services'], ['Projects', '#work'], ['About', '#values'], ['Contact', '#contact']] },
+  { title: 'Sports', links: sportPages.slice(0, 5).map(p => [p.title, `/sports/${p.slug}`]) },
+  { title: 'Company', links: [['Surfaces', '/#surfaces'], ['Services', '/#services'], ['Projects', '/#work'], ['About', '/#values']] },
   { title: 'Reach us', links: [[contact.phone, contact.tel], [contact.email, `mailto:${contact.email}`], ['WhatsApp', contact.whatsapp]] },
 ]
 
@@ -35,15 +46,18 @@ export default function Footer() {
         {columns.map(c => (
           <div key={c.title}>
             <h4 className="mb-3 text-[15px] font-medium text-ink">{c.title}</h4>
-            {c.links.map(([label, href]) => (
-              <a key={label} href={href} className="block py-1 text-[15px] break-words transition-colors hover:text-accent">{label}</a>
-            ))}
+            {c.links.map(([label, href]) => {
+              const cls = 'block py-1 text-[15px] break-words transition-colors hover:text-accent'
+              return href.startsWith('/')
+                ? <Link key={label} to={href} className={cls}>{label}</Link>
+                : <a key={label} href={href} className={cls}>{label}</a>
+            })}
           </div>
         ))}
       </Wrap>
       <Wrap className="mt-14 flex flex-col justify-between gap-4 border-t border-line pt-6 text-sm sm:flex-row">
         <span>© {new Date().getFullYear()} Equinox Sports Infra. All rights reserved.</span>
-        <a href="#top" className="hover:text-accent">Back to top ↑</a>
+        <a href="#top" onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }} className="hover:text-accent">Back to top ↑</a>
       </Wrap>
     </footer>
   )

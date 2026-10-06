@@ -47,8 +47,8 @@ export default function Projects() {
 
   return (
     <section id="work" ref={section} className="relative mt-[clamp(40px,6vw,80px)]">
-      <div className="flex flex-col justify-center overflow-hidden py-20 md:sticky md:top-0 md:h-svh md:py-0">
-        <Wrap className="mb-9 flex items-end justify-between">
+      <div className="flex flex-col justify-center overflow-hidden py-20 md:sticky md:top-0 md:h-svh md:pt-24 md:pb-10">
+        <Wrap className="mb-8 flex flex-none items-end justify-between">
           <div>
             <Eyebrow n="05">Projects</Eyebrow>
             <h2 className="h2">Recent grounds.</h2>
@@ -57,13 +57,13 @@ export default function Projects() {
         </Wrap>
         <div ref={track} className="no-scrollbar flex snap-x snap-mandatory gap-[18px] overflow-x-auto px-4 pb-2 will-change-transform md:snap-none md:overflow-visible md:px-10">
           {projects.map((p, i) => (
-            <figure key={p.img} className="group w-[78vw] flex-none cursor-zoom-in snap-center md:w-[clamp(280px,34vw,460px)]" onClick={() => setShot(p)}>
+            <figure key={p.img} className="group w-[78vw] flex-none cursor-zoom-in snap-center md:w-auto" onClick={() => setShot(p)}>
               <img
                 src={p.img}
                 alt={p.title}
                 loading="lazy"
-                className={`aspect-[4/5] w-full rounded-card object-cover shadow-soft transition-[transform,border-radius] duration-600 ease-ios group-hover:scale-[0.98] group-hover:rounded-[28px] ${
-                  i % 2 ? 'md:mt-10 md:aspect-[4/4.4]' : ''
+                className={`aspect-[4/5] w-full rounded-card object-cover shadow-soft transition-[transform,border-radius] duration-600 ease-ios group-hover:scale-[0.98] group-hover:rounded-[28px] md:w-auto ${
+                  i % 2 ? 'md:mt-8 md:h-[clamp(240px,46vh,440px)]' : 'md:h-[clamp(260px,52vh,500px)]'
                 }`}
               />
               <figcaption className="mt-3 text-[15px] text-ink-2">{p.title}</figcaption>

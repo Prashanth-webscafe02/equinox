@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { slugForSport } from '../sportPages.js'
 import { sports } from '../data.js'
 import { Eyebrow, Reveal, Wrap } from './ui.jsx'
 
@@ -52,12 +54,13 @@ export default function Sports() {
 
         <ol className="border-t border-line">
           {sports.map((s, i) => (
-            <Reveal
-              as="li"
-              key={s.name}
+            <Reveal as="li" key={s.name} className="border-b border-line">
+              <Link
+              to={`/sports/${slugForSport(s.name)}`}
               onMouseEnter={() => setHover(s.img)}
               onMouseLeave={() => setHover(null)}
-              className="group grid grid-cols-[52px_1fr_auto] items-center gap-x-3.5 gap-y-0.5 border-b border-line px-1 py-[18px] transition-[padding] duration-500 ease-ios md:grid-cols-[44px_64px_1fr_auto_40px] md:gap-x-5 md:px-2 md:py-5 md:hover:pl-6"
+              onClick={() => setHover(null)}
+              className="group grid grid-cols-[52px_1fr_auto] items-center gap-x-3.5 gap-y-0.5 px-1 py-[18px] transition-[padding] duration-500 ease-ios md:grid-cols-[44px_64px_1fr_auto_40px] md:gap-x-5 md:px-2 md:py-5 md:hover:pl-6"
             >
               <span className="hidden font-mono text-sm text-ink-3 md:block">{String(i + 1).padStart(2, '0')}</span>
               <svg viewBox="0 0 48 32" aria-hidden="true"
@@ -68,6 +71,7 @@ export default function Sports() {
               <span className="col-start-2 text-sm text-ink-2 md:col-start-auto md:text-right md:text-[15px]">{s.note}</span>
               <span className="hidden size-9 place-items-center justify-self-end rounded-full bg-ink/5 transition duration-500 ease-ios group-hover:rotate-45 group-hover:bg-accent group-hover:text-white md:grid">↗</span>
               <img src={s.img} alt="" loading="lazy" className="col-start-3 row-span-2 row-start-1 h-14 w-[74px] rounded-xl object-cover md:hidden" />
+              </Link>
             </Reveal>
           ))}
         </ol>

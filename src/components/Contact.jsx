@@ -34,7 +34,7 @@ function Segmented({ options, value, onChange }) {
   )
 }
 
-export default function Contact() {
+export default function Contact({ sport = quoteSports[0], heading = <>Let's mark out <br />your court.</> }) {
   const [facility, setFacility] = useState(facilityTypes[0])
 
   // no backend: compose the enquiry and hand it to WhatsApp
@@ -66,7 +66,7 @@ export default function Contact() {
       <Wrap className="relative grid items-center gap-12 lg:grid-cols-[1fr_460px]">
         <div>
           <Eyebrow n="07" light>Contact</Eyebrow>
-          <h2 className="h2">Let's mark out <br />your court.</h2>
+          <h2 className="h2">{heading}</h2>
           <ul className="mt-10 grid gap-[22px]">
             {info.map(x => (
               <li key={x.k} className="grid gap-0.5">
@@ -88,7 +88,7 @@ export default function Contact() {
             <Segmented options={facilityTypes} value={facility} onChange={setFacility} />
           </div>
           <Field label="Sport">
-            <select name="sport" className={`${field} bg-[url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%235d636c' stroke-width='1.6'/%3E%3C/svg%3E")] bg-[position:right_16px_center] bg-no-repeat pr-10`}>
+            <select key={sport} name="sport" defaultValue={sport} className={`${field} bg-[url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%235d636c' stroke-width='1.6'/%3E%3C/svg%3E")] bg-[position:right_16px_center] bg-no-repeat pr-10`}>
               {quoteSports.map(s => <option key={s}>{s}</option>)}
             </select>
           </Field>

@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { navLinks } from '../data.js'
 import { useScroll } from '../hooks.js'
 import { Button } from './ui.jsx'
 
 export function Brand() {
   return (
-    <a href="#top" className="mr-auto flex items-center gap-2.5" aria-label="Equinox Sports Infra home">
+    <Link to="/" className="mr-auto flex items-center gap-2.5" aria-label="Equinox Sports Infra home">
       <span className="grid w-[22px] gap-[3px]" aria-hidden="true">
         <i className="h-[5px] rounded bg-ink" />
         <i className="h-[5px] w-3/4 rounded bg-accent" />
@@ -15,7 +16,7 @@ export function Brand() {
         Equinox
         <small className="mt-[3px] block text-[10px] font-medium tracking-[0.18em] text-ink-2 uppercase">Sports Infra</small>
       </span>
-    </a>
+    </Link>
   )
 }
 
@@ -25,6 +26,7 @@ export default function Nav() {
   const [active, setActive] = useState('')
   const lastY = useRef(0)
   const bar = useRef(null)
+  const { pathname } = useLocation()
 
   // hide on scroll down, show on scroll up
   useScroll(() => {
@@ -41,9 +43,14 @@ export default function Nav() {
       entries => entries.forEach(e => e.isIntersecting && setActive(e.target.id)),
       { rootMargin: '-45% 0px -50% 0px' },
     )
-    navLinks.forEach(l => io.observe(document.getElementById(l.id)))
+    navLinks.forEach(l => {
+      const el = document.getElementById(l.id)
+      if (el) io.observe(el)
+    })
+    setActive('')
+    setOpen(false)
     return () => io.disconnect()
-  }, [])
+  }, [pathname])
 
   useEffect(() => {
     const onKey = e => e.key === 'Escape' && setOpen(false)
@@ -64,15 +71,15 @@ export default function Nav() {
           <Brand />
           <nav className="hidden gap-1 lg:flex" aria-label="Primary">
             {navLinks.map(l => (
-              <a
+              <Link
                 key={l.id}
-                href={`#${l.id}`}
+                to={`/#${l.id}`}
                 className={`rounded-full px-3.5 py-2 text-[15px] transition-colors hover:bg-ink/6 hover:text-ink ${
                   active === l.id ? 'bg-ink/6 text-ink' : 'text-ink-2'
                 }`}
               >
                 {l.label}
-              </a>
+              </Link>
             ))}
           </nav>
           <div className="hidden md:block">
@@ -104,9 +111,9 @@ export default function Nav() {
           }`}
         >
           {navLinks.map(l => (
-            <a key={l.id} href={`#${l.id}`} className="flex justify-between border-b border-line px-3.5 py-4 text-xl font-medium last:border-0">
+            <Link key={l.id} to={`/#${l.id}`} className="flex justify-between border-b border-line px-3.5 py-4 text-xl font-medium last:border-0">
               {l.label} <span className="text-ink-3">›</span>
-            </a>
+            </Link>
           ))}
         </div>
       </div>

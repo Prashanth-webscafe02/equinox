@@ -7,7 +7,6 @@
   --font-mono: "Google Sans Code", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
   --color-bg: #f2f2f4;
-  --color-track: #c2452f;
   --color-ink: #1c1e22;
   --color-ink-2: #5d636c;
   --color-ink-3: #9aa0a8;
@@ -33,7 +32,6 @@
   --animate-pulse-dot: pulse-dot 2s infinite;
   --animate-marquee: marquee 30s linear infinite;
   --animate-fill: fill var(--dur, 6s) linear forwards;
-  --animate-lane: marquee var(--dur, 30s) linear infinite;
 
   @keyframes hero-zoom { from { transform: scale(1.12); } to { transform: scale(1); } }
   @keyframes line-up { from { transform: translateY(105%); } to { transform: none; } }

@@ -15,8 +15,6 @@ export const navLinks = [
   { id: 'contact', label: 'Contact' },
 ]
 
-export const lanes = ['Athletic tracks', 'Football turf', 'Tennis courts', 'Badminton halls', 'Cricket nets', 'Basketball courts']
-
 export const islandWords = ['athletic tracks', 'football turf', 'tennis courts', 'badminton halls', 'cricket nets', 'gym floors']
 
 export const intro =
@@ -118,7 +116,25 @@ export const testimonials = [
   { name: 'Mr. Rakesh', place: 'Bangalore', text: 'They presented the project very well and the customer service was great. Happy with the pricing too.' },
 ]
 
-export const clients = ['/img/client-1.jpg', '/img/client-2.jpg', '/img/client-3.jpg', '/img/client-4.jpg', '/img/client-5.jpg']
+export const clients = [
+  { name: 'Decathlon', src: '/img/client-decathlon.svg' },
+  { name: 'Piramal Realty', src: '/img/client-piramal.jpg' },
+  { name: 'Godrej', src: '/img/client-godrej.svg' },
+  { name: 'Mahaveer', src: '/img/client-mahaveer.jpg' },
+  { name: 'V. R & Co. Builders & Developers', src: '/img/client-vrr.jpg' },
+]
 
 export const facilityTypes = ['Outdoor', 'Indoor', 'Both']
 export const quoteSports = ['Football', 'Cricket', 'Tennis', 'Basketball', 'Badminton', 'Athletic track', 'Hockey', 'Volleyball', 'Gym', 'Multi-sport']
+
+// "Recent apps" carousel: what we build. `sport` picks the field drawing from `sports`.
+export const builds = [
+  { name: 'Athletic tracks', sport: 'Athletic track', img: '/img/campus-track.jpg', text: 'Synthetic running tracks with lane marking for schools, campuses and stadiums.' },
+  { name: 'Football turf', sport: 'Football', img: '/img/turf-night.png', text: 'Artificial turf pitches that play well all year, open or floodlit.' },
+  { name: 'Tennis courts', sport: 'Tennis', img: '/img/rooftop-night.jpg', text: 'Acrylic hard courts with a true bounce and UV-stable colour.' },
+  { name: 'Badminton halls', sport: 'Badminton', img: '/img/badminton-wood.jpg', text: 'Wooden, vinyl and PU courts for fast indoor footwork.' },
+  { name: 'Cricket nets', sport: 'Cricket', img: '/img/cricket-nets.jpg', text: 'Turf practice lanes with netting and lighting.' },
+  { name: 'Basketball courts', sport: 'Basketball', img: '/img/street-court.jpg', text: 'Indoor and outdoor courts, marked to standard.' },
+  { name: 'Multi-sport courts', sport: 'Volleyball', img: '/img/multi-sport.jpg', text: 'One surface, several games: volleyball, badminton and basketball.' },
+  { name: 'Gym floors', sport: 'Gym', img: '/img/gym.jpg', text: 'Rubber and wooden flooring that takes heavy, everyday training.' },
+]
