@@ -94,7 +94,7 @@ function ContactMenu() {
       >
         <span className="relative grid size-10 place-items-center rounded-full bg-white/20">
           <svg viewBox="0 0 24 24" className={`size-[18px] fill-white transition-transform duration-300 ease-ios ${open ? 'rotate-[135deg]' : ''}`} aria-hidden="true">
-            <path d={open ? 'M11 5h2v14h-2zM5 11h14v2H5z' : actions[0].icon} />
+            <path d={open ? 'M11 5h2v14h-2zM5 11h14v2H5z' : 'M12 1a9 9 0 0 0-9 9v7a3 3 0 0 0 3 3h3v-8H5v-2a7 7 0 0 1 14 0v2h-4v8h4v1h-7v2h6a3 3 0 0 0 3-3V10a9 9 0 0 0-9-9z'} />
           </svg>
           <span className="absolute top-0 right-0 size-2.5 rounded-full border-2 border-[#2a3a48] bg-green" />
         </span>

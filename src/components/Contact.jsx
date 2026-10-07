@@ -60,8 +60,9 @@ export default function Contact({ sport = quoteSports[0], heading = <>Let's mark
 
   return (
     <section id="contact" className="relative mx-1.5 overflow-hidden rounded-panel py-[clamp(80px,10vw,140px)] text-white md:mx-2.5">
-      <div className="absolute inset-0 bg-[url(/img/street-court.jpg)] bg-cover bg-center" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[rgb(10_12_16/.82)] to-[rgb(10_12_16/.35)]" />
+      {/* widened to the left so the hoop and pole land in the gap between the copy and the form */}
+      <div className="absolute inset-y-0 -left-[18%] right-0 bg-[url(/img/street-court.jpg)] bg-cover bg-center" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[rgb(10_12_16/.82)] via-[rgb(10_12_16/.4)] via-40% to-[rgb(10_12_16/.35)]" />
 
       <Wrap className="relative grid items-center gap-12 lg:grid-cols-[1fr_460px]">
         <div>
