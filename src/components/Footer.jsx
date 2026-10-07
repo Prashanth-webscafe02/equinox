@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { clients, contact } from '../data.js'
 import { sportPages } from '../sportPages.js'
-import { Eyebrow, Wrap } from './ui.jsx'
+import { Eyebrow, Logo, Wrap } from './ui.jsx'
 
 export function Clients() {
   return (
@@ -43,7 +43,9 @@ export default function Footer() {
     <footer className="pt-[72px] pb-[calc(32px+env(safe-area-inset-bottom))] text-ink-2">
       <Wrap className="grid gap-8 sm:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr_1fr]">
         <div>
-          <img src="/img/logo.png" alt="Equinox Sports Infra" width="180" height="58" className="box-content w-[180px] rounded-2xl bg-ink px-4 py-3" />
+          <div className="inline-block rounded-2xl bg-ink px-4 py-3">
+            <Logo light className="block h-[58px]" textClass="text-[12.5px]" />
+          </div>
           <p className="mt-4 max-w-[300px] text-[15px]">Redefining Safety. Sports infrastructure designed and built in Bangalore.</p>
         </div>
         {columns.map(c => (

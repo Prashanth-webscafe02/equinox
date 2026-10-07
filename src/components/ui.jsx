@@ -34,6 +34,21 @@ export function Reveal({ as: Tag = 'div', delay = 0, className = '', children, .
   )
 }
 
+// Logo mark + "Sports Infra" set as real text (the PNG's own subtext is too small to read).
+// The letters are spread to the exact width of EQUINOX; size the logo with a height class.
+export function Logo({ light, className = 'h-12', textClass = 'text-[10.5px]' }) {
+  return (
+    <span className={`relative inline-block ${className}`}>
+      <img src={light ? '/img/logo-mark.png' : '/img/logo-dark-mark.png'} alt="Equinox Sports Infra"
+        width="270" height="87" className="h-full w-auto" />
+      <span aria-hidden="true"
+        className={`absolute top-[73%] right-[0.5%] left-[39.3%] flex justify-between leading-none font-semibold uppercase ${light ? 'text-[#62bead]' : 'text-[#2f8f7a]'} ${textClass}`}>
+        {[...'Sports Infra'].map((c, i) => <span key={i}>{c}</span>)}
+      </span>
+    </span>
+  )
+}
+
 export function Wrap({ className = '', children }) {
   return <div className={`mx-auto w-full max-w-[1240px] px-4 sm:px-6 lg:px-10 ${className}`}>{children}</div>
 }

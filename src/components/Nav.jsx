@@ -2,16 +2,12 @@ import { useEffect, useRef, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { navLinks } from '../data.js'
 import { useScroll } from '../hooks.js'
-import { Button } from './ui.jsx'
+import { Button, Logo } from './ui.jsx'
 
 export function Brand() {
   return (
-    <Link to="/" className="relative mr-auto flex items-center" aria-label="Equinox Sports Infra home">
-      <img src="/img/logo-dark-mark.png" alt="Equinox Sports Infra" width="270" height="87" className="h-10 w-auto md:h-12" />
-      {/* the PNG's subtext is unreadable at nav size, so it's set as real text */}
-      <span aria-hidden="true" className="absolute top-[64%] left-[39.5%] text-[9px] leading-none font-semibold tracking-[0.3em] whitespace-nowrap text-[#2f8f7a] uppercase md:text-[10.5px]">
-        Sports Infra
-      </span>
+    <Link to="/" className="mr-auto flex items-center" aria-label="Equinox Sports Infra home">
+      <Logo className="h-10 md:h-12" textClass="text-[9px] md:text-[10.5px]" />
     </Link>
   )
 }
