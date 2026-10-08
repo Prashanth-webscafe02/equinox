@@ -1,11 +1,35 @@
+import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { clients, contact } from '../data.js'
 import { sportPages } from '../sportPages.js'
 import { Eyebrow, Logo, Wrap } from './ui.jsx'
 
 export function Clients() {
+  const marquee = useRef(null)
+
+  // Step both rows by one tile along their own direction (dir 1 = forward, -1 = back),
+  // by easing each CSS animation's clock, so it works even mid-scroll or while hovered.
+  const step = dir => {
+    marquee.current.querySelectorAll('.marquee-track').forEach(track => {
+      const anim = track.getAnimations()[0]
+      if (!anim) return
+      const dur = anim.effect.getComputedTiming().duration
+      const from = anim.currentTime
+      const by = dir * dur / (track.children.length / 2)
+      const t0 = performance.now()
+      const tick = now => {
+        const k = Math.min((now - t0) / 450, 1)
+        const t = from + by * (1 - (1 - k) ** 3)
+        anim.currentTime = ((t % dur) + dur) % dur
+        if (k < 1) requestAnimationFrame(tick)
+      }
+      requestAnimationFrame(tick)
+    })
+  }
+
+  const control = 'glass grid size-11 shrink-0 cursor-pointer place-items-center rounded-full transition hover:scale-105'
   return (
-    <section aria-label="Clients">
+    <section aria-label="Clients" className="pb-[clamp(80px,10vw,130px)]">
       <Wrap>
         <div className="mb-8 items-end justify-between gap-6 md:flex">
           <div>
@@ -20,10 +44,25 @@ export function Clients() {
 
       </Wrap>
 
-      <div className="clients-marquee grid gap-3 pb-[clamp(80px,10vw,130px)]">
-        <ClientRow items={rows[0]} />
-        <ClientRow items={rows[1]} reverse />
+      <div className="clients-strip relative">
+        <div ref={marquee} className="clients-marquee grid gap-3">
+          <ClientRow items={rows[0]} />
+          <ClientRow items={rows[1]} reverse />
+        </div>
+        <button type="button" onClick={() => step(-1)} aria-label="Previous logos" className={`${control} absolute top-1/2 z-10 -translate-y-1/2 shadow-lift left-3 md:left-6`}>
+          <svg viewBox="0 0 24 24" className="size-5" fill="none" stroke="currentColor" strokeWidth="2.2"
+            strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="m15 5-7 7 7 7" />
+          </svg>
+        </button>
+        <button type="button" onClick={() => step(1)} aria-label="Next logos" className={`${control} absolute top-1/2 z-10 -translate-y-1/2 shadow-lift right-3 md:right-6`}>
+          <svg viewBox="0 0 24 24" className="size-5" fill="none" stroke="currentColor" strokeWidth="2.2"
+            strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="m9 5 7 7-7 7" />
+          </svg>
+        </button>
       </div>
+
     </section>
   )
 }
