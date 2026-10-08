@@ -6,7 +6,7 @@ import { Eyebrow, Logo, Wrap } from './ui.jsx'
 export function Clients() {
   return (
     <section aria-label="Clients">
-      <Wrap className="pb-[clamp(80px,10vw,130px)]">
+      <Wrap>
         <div className="mb-8 items-end justify-between gap-6 md:flex">
           <div>
             <Eyebrow>Trusted by</Eyebrow>
@@ -18,17 +18,33 @@ export function Clients() {
           </p>
         </div>
 
-        <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
-          {clients.map(c => (
-            <li key={c.name}
-              className="group grid h-[120px] place-items-center rounded-card bg-white px-8 shadow-soft ring-1 ring-line transition duration-500 ease-ios hover:-translate-y-1 hover:shadow-lift last:col-span-2 sm:last:col-span-1">
-              <img src={c.src} alt={c.name} loading="lazy"
-                className="max-h-14 w-full object-contain opacity-70 mix-blend-multiply grayscale transition duration-500 group-hover:opacity-100 group-hover:grayscale-0" />
-            </li>
-          ))}
-        </ul>
       </Wrap>
+
+      <div className="clients-marquee grid gap-3 pb-[clamp(80px,10vw,130px)]">
+        <ClientRow items={rows[0]} />
+        <ClientRow items={rows[1]} reverse />
+      </div>
     </section>
+  )
+}
+
+// Only clients with a logo are shown; the rest stay in data.js until their logo files arrive.
+const withLogo = clients.filter(c => c.src)
+const rows = [withLogo.filter((_, i) => i % 2 === 0), withLogo.filter((_, i) => i % 2 === 1)]
+
+// The list is rendered twice so translating by half its width loops seamlessly.
+function ClientRow({ items, reverse }) {
+  return (
+    <div className="overflow-hidden">
+      <ul className={`marquee-track flex w-max gap-3 ${reverse ? 'marquee-reverse' : ''}`}>
+        {[...items, ...items].map((c, i) => (
+          <li key={i} aria-hidden={i >= items.length || undefined}
+            className="grid h-[76px] w-[180px] shrink-0 place-items-center rounded-tile bg-white px-5 shadow-soft ring-1 ring-line md:h-[84px] md:w-[200px]">
+            <img src={c.src} alt={c.name} decoding="async" className="max-h-[52px] w-full object-contain mix-blend-multiply md:max-h-[60px]" />
+          </li>
+        ))}
+      </ul>
+    </div>
   )
 }
 

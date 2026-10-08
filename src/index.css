@@ -135,6 +135,15 @@
   &::-webkit-scrollbar { display: none; }
 }
 
+/* Client logo strip: two rows looping in opposite directions, faded at the edges.
+   Each track holds its list twice; -50% minus half the 12px gap lands exactly on the copy. */
+.clients-marquee {
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.marquee-track { animation: client-loop 90s linear infinite; }
+.marquee-reverse { animation-direction: reverse; }
+@keyframes client-loop { to { transform: translateX(calc(-50% - 6px)); } }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
