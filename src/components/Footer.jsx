@@ -46,8 +46,9 @@ export function Clients() {
 
       <div className="clients-strip relative">
         <div ref={marquee} className="clients-marquee grid gap-3">
-          <ClientRow items={rows[0]} />
-          <ClientRow items={rows[1]} reverse />
+          {/* Top row runs right, bottom row runs left, so the logos circulate clockwise. */}
+          <ClientRow items={rows[0]} reverse />
+          <ClientRow items={rows[1]} />
         </div>
         <button type="button" onClick={() => step(-1)} aria-label="Previous logos" className={`${control} absolute top-1/2 z-10 -translate-y-1/2 shadow-lift left-3 md:left-6`}>
           <svg viewBox="0 0 24 24" className="size-5" fill="none" stroke="currentColor" strokeWidth="2.2"
