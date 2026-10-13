@@ -21,13 +21,13 @@ export const intro =
   'Equinox is a full-service sports infrastructure firm. We design, advise on and build outdoor synthetic floors, turf, play areas, indoor vinyl and wooden courts, and we take on complete turnkey projects for stadiums, clubs, schools, offices and homes.'
 
 export const surfaces = [
-  { name: 'Synthetic Grass Turf', tx: 'tx-turf', where: 'Outdoor', img: '/img/stock/turf-stripes.jpg',
+  { name: 'Synthetic Grass Turf', tx: 'tx-turf', where: 'Outdoor', img: '/img/projects/football-turf.jpg',
     text: 'Infilled artificial grass that stays green and playable all year, with none of the mowing, watering or muddy patches of natural grass.',
     tags: ['Football', 'Hockey', 'Cricket nets', 'Play areas'] },
   { name: 'Acrylic Synthetic Flooring', tx: 'tx-acrylic', where: 'Outdoor', img: '/img/projects/rooftop-basketball.jpg',
     text: 'Layered acrylic coating over a concrete or bitumen base. UV-stable colour, a true ball bounce and an optional cushioned layer for comfort.',
     tags: ['Tennis', 'Basketball', 'Multi-sport'] },
-  { name: 'PVC Vinyl Flooring', tx: 'tx-pvc', where: 'Indoor', img: '/img/stock/vinyl-court.jpg',
+  { name: 'PVC Vinyl Flooring', tx: 'tx-pvc', where: 'Indoor', img: '/img/blue-court.jpg',
     text: 'Roll-out vinyl with a foam backing that gives consistent grip and shock absorption for fast indoor footwork.',
     tags: ['Badminton', 'Table tennis', 'Indoor halls'] },
   { name: 'PU Synthetic Flooring', tx: 'tx-pu', where: 'Indoor & outdoor', img: '/img/multi-sport.jpg',
@@ -39,7 +39,7 @@ export const surfaces = [
   { name: 'Rubber Tile', tx: 'tx-rubber', where: 'Indoor', img: '/img/gym.jpg',
     text: 'Dense interlocking rubber tiles that absorb dropped weights and machine vibration, and protect the slab underneath.',
     tags: ['Gyms', 'Fitness studios', 'Weight rooms'] },
-  { name: 'Wooden Flooring', tx: 'tx-wood', where: 'Indoor', img: '/img/stock/wood-court.jpg',
+  { name: 'Wooden Flooring', tx: 'tx-wood', where: 'Indoor', img: '/img/projects/squash-court.jpg',
     text: 'Sprung hardwood courts with the classic feel, grip and ball response that indoor players expect.',
     tags: ['Basketball', 'Badminton', 'Squash'] },
   { name: 'PP Tile', tx: 'tx-pp', where: 'Outdoor', img: '/img/pp-tile.jpg',
@@ -67,7 +67,7 @@ export const sports = [
     field: `${box}M24 4v24${ring(24, 16, 4)}M4 10h6v12H4M44 10h-6v12h6M4 13h2v6H4M44 13h-2v6h2` },
   { name: 'Gym', note: 'Rubber & wooden flooring', img: '/img/gym.jpg',
     field: 'M14 16h20M8 10h4v12H8zM36 10h4v12h-4zM12 12h2v8h-2zM34 12h2v8h-2zM5 14h3v4H5zM40 14h3v4h-3z' },
-  { name: 'Hockey', note: 'Synthetic turf fields', img: '/img/stock/turf-stripes.jpg',
+  { name: 'Hockey', note: 'Synthetic turf fields', img: '/img/projects/football-turf.jpg',
     field: `${box}M24 4v24M14 4v24M34 4v24M4 9a7 7 0 0 1 0 14M44 9a7 7 0 0 0 0 14` },
   { name: 'Tennis', note: 'Acrylic hard courts', img: '/img/projects/tennis-court.jpg',
     field: `${box}M24 3v26M4 7h40M4 25h40M14 7v18M34 7v18M14 16h20` },
@@ -77,7 +77,7 @@ export const sports = [
 
 // icon: SVG path data drawn with a 1.6 stroke
 export const services = [
-  { title: 'Turnkey projects', text: 'One team from concept to handover: civil base, surface, fencing, lighting and finishing.', img: '/video/decathlon-rooftop.jpg', video: '/video/decathlon-rooftop.mp4', size: 'big' },
+  { title: 'Turnkey projects', text: 'One team from concept to handover: civil base, surface, fencing, lighting and finishing.', img: '/img/rooftop-night.jpg', size: 'big' },
   { title: 'Consultancy & design', text: 'Site study, layout planning and surface selection before a single bag of material arrives.', icon: 'M4 20V9l8-5 8 5v11M9 20v-6h6v6' },
   { title: 'LED lighting', text: 'Even, glare-controlled floodlighting so play continues well after sunset.', icon: 'M12 3v3M5.6 5.6l2.1 2.1M3 12h3M18.4 5.6l-2.1 2.1M21 12h-3M16 14a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z' },
   { title: 'Chain link fencing', text: 'Galvanised, coated perimeter fencing that keeps the ball in and the court secure.', icon: 'M4 4l16 16M20 4L4 20M4 12h16M12 4v16' },

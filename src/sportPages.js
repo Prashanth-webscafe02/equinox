@@ -35,7 +35,7 @@ export const sportPages = [
     slug: 'badminton',
     sport: 'Badminton',
     title: 'Badminton courts',
-    img: '/img/stock/badminton-hall.jpg',
+    img: '/img/sports/badminton.jpg',
     lead: 'Indoor and outdoor badminton surfaces, from federation-approved vinyl to full wooden halls.',
     intro:
       'Our badminton range covers BWF-approved vinyl, roll-out mats and wooden floors, tested for the demands of both professional and community halls. Whether the court is for a club, a school or a residence, there is a surface that fits the budget without giving up player comfort.',
@@ -90,7 +90,7 @@ export const sportPages = [
     slug: 'cricket',
     sport: 'Cricket',
     title: 'Cricket wickets & outfield',
-    img: '/img/stock/cricket-stumps.jpg',
+    img: '/img/projects/cricket-nets.jpg',
     lead: 'Wickets and outfields for amateur and professional cricket, indoors and out.',
     intro:
       'Our wickets give a consistent, even playing surface with good bounce and turn, and our outfield turf lets the ball race to the boundary while fielders dive without risk of injury. Run-up and roll-out wickets are available for practice and multi-use spaces.',
@@ -144,7 +144,7 @@ export const sportPages = [
     slug: 'gym',
     sport: 'Gym',
     title: 'Gym flooring',
-    img: '/img/stock/gym-floor.jpg',
+    img: '/img/sports/gym.jpg',
     lead: 'Turf and rubber flooring for high-energy training zones.',
     intro:
       'We supply synthetic turf for sled and resistance-training lanes and rubber tiles for weight areas. Sweat does not soak into the surface, and the turf is certified to indoor fire-rating standards.',

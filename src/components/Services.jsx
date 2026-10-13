@@ -6,16 +6,11 @@ const span = {
   wide: 'md:col-span-2',
 }
 
-function Tile({ title, text, icon, img, video, size }) {
+function Tile({ title, text, icon, img, size }) {
   if (img) {
     return (
       <Reveal className={`group relative flex min-h-[250px] flex-col justify-end overflow-hidden rounded-card p-3.5 shadow-soft transition duration-500 ease-ios hover:-translate-y-1 hover:shadow-lift ${span[size] ?? ''}`}>
-        {video ? (
-          <video src={video} poster={img} autoPlay muted loop playsInline preload="none" aria-hidden="true"
-            className="absolute inset-0 size-full object-cover transition-transform duration-[1200ms] ease-ios group-hover:scale-[1.06]" />
-        ) : (
-          <img src={img} alt="" loading="lazy" className="absolute inset-0 size-full object-cover transition-transform duration-[1200ms] ease-ios group-hover:scale-[1.06]" />
-        )}
+        <img src={img} alt="" loading="lazy" className="absolute inset-0 size-full object-cover transition-transform duration-[1200ms] ease-ios group-hover:scale-[1.06]" />
         <div className="glass relative rounded-2xl p-5">
           <h3 className="mb-1.5 text-[17px] font-medium">{title}</h3>
           <p className="text-[15px] text-[#2b2f35]">{text}</p>

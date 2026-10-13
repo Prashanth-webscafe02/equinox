@@ -18,7 +18,7 @@ export default function Values() {
 
   return (
     <section id="values" ref={section} className="relative m-1.5 overflow-hidden rounded-panel pt-[clamp(140px,22vw,300px)] pb-[clamp(40px,5vw,60px)] md:m-2.5">
-      <div ref={bg} className="absolute inset-x-0 -inset-y-[15%] bg-[url(/img/stock/values-court.jpg)] bg-cover bg-center will-change-transform" />
+      <div ref={bg} className="absolute inset-x-0 -inset-y-[15%] bg-[url(/img/projects/rooftop-pickleball.jpg)] bg-cover bg-center will-change-transform" />
       <Wrap className="relative grid gap-4 md:grid-cols-3">
         {values.map((v, i) => (
           <Reveal key={v.title} delay={i * 0.1} className="glass rounded-card p-7">
