@@ -121,11 +121,26 @@ export default function Hero() {
   return (
     <section className="h-svh min-h-[600px] p-1.5 md:min-h-[640px] md:p-2.5">
       <div ref={frame} className="relative h-full origin-top overflow-hidden rounded-[26px] bg-[#1a2a3a] will-change-transform md:rounded-panel">
-        <img
-          src="/img/hero-court.jpg"
-          alt="Aerial view of a blue and yellow basketball court"
-          className="absolute inset-0 size-full animate-hero-zoom object-cover"
-        />
+        {/* stock drone loop (Pexels 9683951, free licence) over five-a-side turf pitches; reduced-motion users get the still */}
+        {reduceMotion() ? (
+          <img
+            src="/video/hero-turf.jpg"
+            alt="Aerial view of five-a-side artificial turf pitches"
+            className="absolute inset-0 size-full object-cover"
+          />
+        ) : (
+          <video
+            src="/video/hero-turf.mp4"
+            poster="/video/hero-turf.jpg"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            aria-label="Aerial view of five-a-side artificial turf pitches"
+            className="absolute inset-0 size-full object-cover"
+          />
+        )}
         <div
           className="absolute inset-0"
           style={{

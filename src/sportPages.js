@@ -6,7 +6,7 @@ export const sportPages = [
     slug: 'athletic-track',
     sport: 'Athletic track',
     title: 'Athletic tracks',
-    img: '/img/sports/athletic-track.jpg',
+    img: '/img/projects/stadium-track.jpg',
     lead: 'All-weather running tracks that help athletes build speed and technique, and keep them on their feet.',
     intro:
       'We lay running tracks in every common build: spray coat, full PU, EPDM, sandwich and prefabricated roll. A good track is flat, elastic and pressure-resistant, holds its colour for years and performs the same in sun or rain. Colours can be customised to your campus or stadium.',
@@ -35,7 +35,7 @@ export const sportPages = [
     slug: 'badminton',
     sport: 'Badminton',
     title: 'Badminton courts',
-    img: '/img/sports/badminton.jpg',
+    img: '/img/stock/badminton-hall.jpg',
     lead: 'Indoor and outdoor badminton surfaces, from federation-approved vinyl to full wooden halls.',
     intro:
       'Our badminton range covers BWF-approved vinyl, roll-out mats and wooden floors, tested for the demands of both professional and community halls. Whether the court is for a club, a school or a residence, there is a surface that fits the budget without giving up player comfort.',
@@ -69,7 +69,7 @@ export const sportPages = [
     slug: 'basketball',
     sport: 'Basketball',
     title: 'Basketball courts',
-    img: '/img/sports/basketball.jpg',
+    img: '/img/projects/multi-court-aerial.jpg',
     lead: 'Courts for training and professional games, in wood, interlocking tiles or acrylic.',
     intro:
       'From FIBA-approved PP interlocking tiles to wooden flooring, our basketball surfaces come in a wide range of colours and are hygienic and easy to clean. Each type can be tuned for the bounce and ball speed you prefer, turning a plain outdoor area into a court people want to play on.',
@@ -90,7 +90,7 @@ export const sportPages = [
     slug: 'cricket',
     sport: 'Cricket',
     title: 'Cricket wickets & outfield',
-    img: '/img/sports/cricket.jpg',
+    img: '/img/stock/cricket-stumps.jpg',
     lead: 'Wickets and outfields for amateur and professional cricket, indoors and out.',
     intro:
       'Our wickets give a consistent, even playing surface with good bounce and turn, and our outfield turf lets the ball race to the boundary while fielders dive without risk of injury. Run-up and roll-out wickets are available for practice and multi-use spaces.',
@@ -120,7 +120,7 @@ export const sportPages = [
     slug: 'football',
     sport: 'Football',
     title: 'Football turf',
-    img: '/img/sports/football.jpg',
+    img: '/img/projects/football-turf.jpg',
     lead: 'FIFA-recognised artificial grass that turns dusty plots into pitches people play on every day.',
     intro:
       'Working with HybridTurf, we have delivered artificial football turf for indoor and outdoor facilities across India. Each pitch is built as a complete system, from the drainage base to the fencing, nets and floodlights.',
@@ -144,7 +144,7 @@ export const sportPages = [
     slug: 'gym',
     sport: 'Gym',
     title: 'Gym flooring',
-    img: '/img/sports/gym.jpg',
+    img: '/img/stock/gym-floor.jpg',
     lead: 'Turf and rubber flooring for high-energy training zones.',
     intro:
       'We supply synthetic turf for sled and resistance-training lanes and rubber tiles for weight areas. Sweat does not soak into the surface, and the turf is certified to indoor fire-rating standards.',
@@ -194,7 +194,7 @@ export const sportPages = [
     slug: 'tennis',
     sport: 'Tennis',
     title: 'Tennis courts',
-    img: '/img/sports/tennis.jpg',
+    img: '/img/projects/tennis-court.jpg',
     lead: 'ITF-certified court surfaces, with a choice of speeds for every style of play.',
     intro:
       'Developed with top players, our tennis surfaces come in a range of speeds, from comfortable courts built for long rallies to quick ones for serve-and-volley. We also build classic acrylic hard courts with a true bounce.',

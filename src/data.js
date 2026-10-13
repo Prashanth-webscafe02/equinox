@@ -21,31 +21,31 @@ export const intro =
   'Equinox is a full-service sports infrastructure firm. We design, advise on and build outdoor synthetic floors, turf, play areas, indoor vinyl and wooden courts, and we take on complete turnkey projects for stadiums, clubs, schools, offices and homes.'
 
 export const surfaces = [
-  { name: 'Synthetic Grass Turf', tx: 'tx-turf', where: 'Outdoor', img: '/img/football-turf.jpg',
+  { name: 'Synthetic Grass Turf', tx: 'tx-turf', where: 'Outdoor', img: '/img/stock/turf-stripes.jpg',
     text: 'Infilled artificial grass that stays green and playable all year, with none of the mowing, watering or muddy patches of natural grass.',
     tags: ['Football', 'Hockey', 'Cricket nets', 'Play areas'] },
-  { name: 'Acrylic Synthetic Flooring', tx: 'tx-acrylic', where: 'Outdoor', img: '/img/acrylic-court.jpg',
+  { name: 'Acrylic Synthetic Flooring', tx: 'tx-acrylic', where: 'Outdoor', img: '/img/projects/rooftop-basketball.jpg',
     text: 'Layered acrylic coating over a concrete or bitumen base. UV-stable colour, a true ball bounce and an optional cushioned layer for comfort.',
     tags: ['Tennis', 'Basketball', 'Multi-sport'] },
-  { name: 'PVC Vinyl Flooring', tx: 'tx-pvc', where: 'Indoor', img: '/img/blue-court.jpg',
+  { name: 'PVC Vinyl Flooring', tx: 'tx-pvc', where: 'Indoor', img: '/img/stock/vinyl-court.jpg',
     text: 'Roll-out vinyl with a foam backing that gives consistent grip and shock absorption for fast indoor footwork.',
     tags: ['Badminton', 'Table tennis', 'Indoor halls'] },
   { name: 'PU Synthetic Flooring', tx: 'tx-pu', where: 'Indoor & outdoor', img: '/img/multi-sport.jpg',
     text: 'Seamless poured polyurethane that is elastic, joint-free and easy to clean, so one court can host several sports.',
     tags: ['Volleyball', 'Badminton', 'Basketball'] },
-  { name: 'Athletic Synthetic Tracks', tx: 'tx-track', where: 'Outdoor', img: '/img/campus-track.jpg',
+  { name: 'Athletic Synthetic Tracks', tx: 'tx-track', where: 'Outdoor', img: '/img/projects/stadium-track.jpg',
     text: 'Rubber-based running track systems with lane markings, built for steady footing in training and competition.',
     tags: ['Running tracks', 'Schools', 'Stadiums'] },
   { name: 'Rubber Tile', tx: 'tx-rubber', where: 'Indoor', img: '/img/gym.jpg',
     text: 'Dense interlocking rubber tiles that absorb dropped weights and machine vibration, and protect the slab underneath.',
     tags: ['Gyms', 'Fitness studios', 'Weight rooms'] },
-  { name: 'Wooden Flooring', tx: 'tx-wood', where: 'Indoor', img: '/img/wood-floor.jpg',
+  { name: 'Wooden Flooring', tx: 'tx-wood', where: 'Indoor', img: '/img/stock/wood-court.jpg',
     text: 'Sprung hardwood courts with the classic feel, grip and ball response that indoor players expect.',
     tags: ['Basketball', 'Badminton', 'Squash'] },
   { name: 'PP Tile', tx: 'tx-pp', where: 'Outdoor', img: '/img/pp-tile.jpg',
     text: 'Modular interlocking polypropylene tiles that drain fast after rain and can be installed quickly over a level base.',
     tags: ['Multi-sport', 'Skating', 'Quick installs'] },
-  { name: 'EPDM', tx: 'tx-epdm', where: 'Outdoor', img: '/img/track-tennis.jpg',
+  { name: 'EPDM', tx: 'tx-epdm', where: 'Outdoor', img: '/img/projects/epdm-play-area.jpg',
     text: 'Colourful rubber granules bound into a soft, cushioning layer for safer play areas and running surfaces.',
     tags: ['Play areas', 'Jogging tracks', 'Schools'] },
 ]
@@ -55,21 +55,21 @@ const box = 'M4 4h40v24H4z'
 const ring = (cx, cy, r) => `M${cx - r} ${cy}a${r} ${r} 0 1 0 ${r * 2} 0a${r} ${r} 0 1 0 ${-r * 2} 0`
 
 export const sports = [
-  { name: 'Athletic track', note: 'PU & EPDM running surfaces', img: '/img/campus-track.jpg',
+  { name: 'Athletic track', note: 'PU & EPDM running surfaces', img: '/img/projects/track-lanes.jpg',
     field: 'M15 4h18a12 12 0 0 1 0 24H15a12 12 0 0 1 0-24zM15 9h18a7 7 0 0 1 0 14H15a7 7 0 0 1 0-14z' },
   { name: 'Badminton', note: 'Wood, vinyl & PU courts', img: '/img/badminton-wood.jpg',
     field: `${box}M24 4v24M18 4v24M30 4v24M4 7h40M4 25h40M4 16h14M30 16h14` },
-  { name: 'Basketball', note: 'Indoor & outdoor courts', img: '/img/street-court.jpg',
+  { name: 'Basketball', note: 'Indoor & outdoor courts', img: '/img/projects/school-basketball.jpg',
     field: `${box}M24 4v24${ring(24, 16, 4)}M4 12h8v8H4M44 12h-8v8h8M12 12a4 4 0 0 1 0 8M36 12a4 4 0 0 0 0 8` },
-  { name: 'Cricket', note: 'Practice nets & turf pitches', img: '/img/cricket-nets.jpg',
+  { name: 'Cricket', note: 'Practice nets & turf pitches', img: '/img/projects/cricket-nets.jpg',
     field: 'M3 16a21 13 0 1 0 42 0a21 13 0 1 0-42 0M21 10h6v12h-6zM21 12h6M21 20h6' },
-  { name: 'Football', note: 'Artificial turf pitches', img: '/img/turf-night.png',
+  { name: 'Football', note: 'Artificial turf pitches', img: '/img/projects/football-turf.jpg',
     field: `${box}M24 4v24${ring(24, 16, 4)}M4 10h6v12H4M44 10h-6v12h6M4 13h2v6H4M44 13h-2v6h2` },
   { name: 'Gym', note: 'Rubber & wooden flooring', img: '/img/gym.jpg',
     field: 'M14 16h20M8 10h4v12H8zM36 10h4v12h-4zM12 12h2v8h-2zM34 12h2v8h-2zM5 14h3v4H5zM40 14h3v4h-3z' },
-  { name: 'Hockey', note: 'Synthetic turf fields', img: '/img/football-turf.jpg',
+  { name: 'Hockey', note: 'Synthetic turf fields', img: '/img/stock/turf-stripes.jpg',
     field: `${box}M24 4v24M14 4v24M34 4v24M4 9a7 7 0 0 1 0 14M44 9a7 7 0 0 0 0 14` },
-  { name: 'Tennis', note: 'Acrylic hard courts', img: '/img/track-tennis.jpg',
+  { name: 'Tennis', note: 'Acrylic hard courts', img: '/img/projects/tennis-court.jpg',
     field: `${box}M24 3v26M4 7h40M4 25h40M14 7v18M34 7v18M14 16h20` },
   { name: 'Volleyball', note: 'Multi-sport court systems', img: '/img/multi-sport.jpg',
     field: 'M8 6h32v20H8zM24 4v24M19 6v20M29 6v20' },
@@ -77,7 +77,7 @@ export const sports = [
 
 // icon: SVG path data drawn with a 1.6 stroke
 export const services = [
-  { title: 'Turnkey projects', text: 'One team from concept to handover: civil base, surface, fencing, lighting and finishing.', img: '/img/rooftop-night.jpg', size: 'big' },
+  { title: 'Turnkey projects', text: 'One team from concept to handover: civil base, surface, fencing, lighting and finishing.', img: '/video/decathlon-rooftop.jpg', video: '/video/decathlon-rooftop.mp4', size: 'big' },
   { title: 'Consultancy & design', text: 'Site study, layout planning and surface selection before a single bag of material arrives.', icon: 'M4 20V9l8-5 8 5v11M9 20v-6h6v6' },
   { title: 'LED lighting', text: 'Even, glare-controlled floodlighting so play continues well after sunset.', icon: 'M12 3v3M5.6 5.6l2.1 2.1M3 12h3M18.4 5.6l-2.1 2.1M21 12h-3M16 14a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z' },
   { title: 'Chain link fencing', text: 'Galvanised, coated perimeter fencing that keeps the ball in and the court secure.', icon: 'M4 4l16 16M20 4L4 20M4 12h16M12 4v16' },
@@ -99,15 +99,20 @@ export const values = [
 ]
 
 export const projects = [
-  { img: '/img/school-courts.jpg', title: 'School multi-court' },
-  { img: '/img/rooftop-night.jpg', title: 'Rooftop sports deck' },
-  { img: '/img/campus-track.jpg', title: 'Campus track & courts' },
-  { img: '/img/indoor-hall.jpg', title: 'Indoor wooden hall' },
-  { img: '/img/multi-sport.jpg', title: 'Volleyball & badminton' },
-  { img: '/img/acrylic-court.jpg', title: 'Acrylic basketball' },
-  { img: '/img/football-turf.jpg', title: 'Five-a-side turf' },
-  { img: '/img/pp-tile.jpg', title: 'PP tile ground' },
-  { img: '/img/blue-court.jpg', title: 'Floodlit court' },
+  { img: '/img/projects/multi-court-aerial.jpg', title: 'Basketball & badminton multi-court' },
+  { img: '/img/projects/track-lanes.jpg', title: 'Stadium athletic track' },
+  { img: '/img/projects/residential-basketball.jpg', title: 'Residential basketball court' },
+  { img: '/img/projects/rooftop-pickleball.jpg', title: 'Rooftop pickleball courts' },
+  { img: '/img/projects/cricket-nets.jpg', title: 'Turf cricket nets' },
+  { img: '/img/projects/football-turf.jpg', title: 'Five-a-side football turf' },
+  { img: '/img/projects/tennis-court.jpg', title: 'Acrylic tennis court' },
+  { img: '/img/projects/squash-court.jpg', title: 'Glass-back squash court' },
+  { img: '/img/projects/school-basketball.jpg', title: 'School basketball court' },
+  { img: '/img/projects/campus-courts.jpg', title: 'Campus multi-sport courts' },
+  { img: '/img/projects/indoor-play-area.jpg', title: 'Indoor play area' },
+  { img: '/img/projects/playground.jpg', title: 'EPDM playground' },
+  { img: '/img/projects/outdoor-badminton.jpg', title: 'Outdoor badminton courts' },
+  { img: '/img/projects/stadium-track.jpg', title: 'Stadium track bend' },
 ]
 
 export const testimonials = [
@@ -182,12 +187,12 @@ export const quoteSports = ['Football', 'Cricket', 'Tennis', 'Basketball', 'Badm
 
 // "Recent apps" carousel: what we build. `sport` picks the field drawing from `sports`.
 export const builds = [
-  { name: 'Athletic tracks', sport: 'Athletic track', img: '/img/campus-track.jpg', text: 'Synthetic running tracks with lane marking for schools, campuses and stadiums.' },
-  { name: 'Football turf', sport: 'Football', img: '/img/turf-night.png', text: 'Artificial turf pitches that play well all year, open or floodlit.' },
-  { name: 'Tennis courts', sport: 'Tennis', img: '/img/rooftop-night.jpg', text: 'Acrylic hard courts with a true bounce and UV-stable colour.' },
+  { name: 'Athletic tracks', sport: 'Athletic track', img: '/img/projects/track-lanes.jpg', text: 'Synthetic running tracks with lane marking for schools, campuses and stadiums.' },
+  { name: 'Football turf', sport: 'Football', img: '/img/projects/football-turf.jpg', text: 'Artificial turf pitches that play well all year, open or floodlit.' },
+  { name: 'Tennis courts', sport: 'Tennis', img: '/img/projects/tennis-court.jpg', text: 'Acrylic hard courts with a true bounce and UV-stable colour.' },
   { name: 'Badminton halls', sport: 'Badminton', img: '/img/badminton-wood.jpg', text: 'Wooden, vinyl and PU courts for fast indoor footwork.' },
-  { name: 'Cricket nets', sport: 'Cricket', img: '/img/cricket-nets.jpg', text: 'Turf practice lanes with netting and lighting.' },
-  { name: 'Basketball courts', sport: 'Basketball', img: '/img/street-court.jpg', text: 'Indoor and outdoor courts, marked to standard.' },
-  { name: 'Multi-sport courts', sport: 'Volleyball', img: '/img/multi-sport.jpg', text: 'One surface, several games: volleyball, badminton and basketball.' },
+  { name: 'Cricket nets', sport: 'Cricket', img: '/img/projects/cricket-nets.jpg', text: 'Turf practice lanes with netting and lighting.' },
+  { name: 'Basketball courts', sport: 'Basketball', img: '/img/projects/school-basketball.jpg', text: 'Indoor and outdoor courts, marked to standard.' },
+  { name: 'Multi-sport courts', sport: 'Volleyball', img: '/img/projects/multi-court-aerial.jpg', text: 'One surface, several games: volleyball, badminton and basketball.' },
   { name: 'Gym floors', sport: 'Gym', img: '/img/gym.jpg', text: 'Rubber and wooden flooring that takes heavy, everyday training.' },
 ]
