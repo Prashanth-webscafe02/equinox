@@ -96,7 +96,7 @@ function ContactMenu() {
           <svg viewBox="0 0 24 24" className={`size-[18px] fill-white transition-transform duration-300 ease-ios ${open ? 'rotate-[135deg]' : ''}`} aria-hidden="true">
             <path d={open ? 'M11 5h2v14h-2zM5 11h14v2H5z' : 'M12 1a9 9 0 0 0-9 9v7a3 3 0 0 0 3 3h3v-8H5v-2a7 7 0 0 1 14 0v2h-4v8h4v1h-7v2h6a3 3 0 0 0 3-3V10a9 9 0 0 0-9-9z'} />
           </svg>
-          <span className="absolute top-0 right-0 size-2.5 rounded-full border-2 border-[#2a3a48] bg-green" />
+          <span className="absolute top-0 right-0 size-2.5 rounded-full border-2 border-[#2f8f7a] bg-green" />
         </span>
         {open ? 'Close' : 'Connect With Us'}
       </button>
@@ -120,24 +120,11 @@ export default function Hero() {
 
   return (
     <section className="h-svh min-h-[600px] p-1.5 md:min-h-[640px] md:p-2.5">
-      <div ref={frame} className="relative h-full origin-top overflow-hidden rounded-[26px] bg-[#1a2a3a] will-change-transform md:rounded-panel">
-        <img
-          src="/img/projects/hero-lanes.jpg"
-          alt="Synthetic athletic track and stadium built by Equinox"
-          className="absolute inset-0 size-full animate-hero-zoom object-cover object-[50%_52%]"
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              'linear-gradient(90deg, rgb(10 12 16 / .55) 0%, transparent 60%), linear-gradient(180deg, rgb(10 12 16 / .25) 0%, transparent 30%, rgb(10 12 16 / .15) 55%, rgb(10 12 16 / .78) 100%)',
-          }}
-        />
-
+      <div ref={frame} className="relative h-full origin-top overflow-hidden rounded-[26px] bg-[#2f8f7a] will-change-transform md:rounded-panel">
         <Island />
 
         <div className="absolute bottom-[clamp(28px,6vw,64px)] left-[clamp(20px,5vw,64px)] max-w-[680px] pr-5 text-white">
-          <p className="eyebrow !text-peach">Redefining Safety</p>
+          <p className="eyebrow !text-white/85">Redefining Safety</p>
           <h1 className="mb-5 leading-[1.08] font-medium tracking-[-0.025em]" style={{ fontSize: 'clamp(30px, min(4.2vw, 7.5vh), 56px)' }}>
             {['Where the game', 'finds its ground.'].map((line, i) => (
               <span key={line} className="block overflow-hidden pb-[0.06em]">
@@ -145,7 +132,7 @@ export default function Hero() {
               </span>
             ))}
           </h1>
-          <p className="mb-7 max-w-[500px] text-[15px] text-white/80 md:text-base" style={{ animation: 'rise 1s 0.4s var(--ease-ios) both' }}>
+          <p className="mb-7 max-w-[500px] text-[15px] text-white/90 md:text-base" style={{ animation: 'rise 1s 0.4s var(--ease-ios) both' }}>
             Design, consultation and turnkey execution of sports infrastructure: from the first site visit to the last line marking.
           </p>
           <div className="flex flex-wrap gap-3" style={{ animation: 'rise 1s 0.55s var(--ease-ios) both' }}>

@@ -35,9 +35,7 @@ export default function SportPage() {
     <main id="top" className="pb-[84px] md:pb-0">
       {/* hero */}
       <section className="h-[82svh] min-h-[560px] p-1.5 md:p-2.5">
-        <div className="relative h-full overflow-hidden rounded-[26px] bg-[#1a2a3a] md:rounded-panel">
-          <img key={page.img} src={page.img} alt={page.title} className="absolute inset-0 size-full animate-hero-zoom object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[rgb(10_12_16/.8)] via-[rgb(10_12_16/.2)] to-[rgb(10_12_16/.35)]" />
+        <div className="relative h-full overflow-hidden rounded-[26px] bg-[#2f8f7a] md:rounded-panel">
 
           <nav aria-label="Breadcrumb" className="glass-dark absolute top-[76px] left-1/2 flex h-9 -translate-x-1/2 items-center gap-2 rounded-full px-4 text-[13px] whitespace-nowrap md:top-[84px]">
             <Link to="/" className="text-white/70 hover:text-white">Home</Link>
@@ -54,7 +52,7 @@ export default function SportPage() {
             <h1 className="mb-4 leading-[1.08] font-medium tracking-[-0.025em]" style={{ fontSize: 'clamp(30px, min(4.2vw, 7.5vh), 56px)' }}>
               {page.title}
             </h1>
-            <p className="mb-7 max-w-[520px] text-[15px] text-white/80 md:text-base">{page.lead}</p>
+            <p className="mb-7 max-w-[520px] text-[15px] text-white/90 md:text-base">{page.lead}</p>
             <div className="flex flex-wrap gap-3">
               <Button href="#contact" variant="light" arrow className="flex-auto sm:flex-none">Get a quote</Button>
               <Button as={Link} to="/#sports" variant="ghost" className="flex-auto sm:flex-none">All sports</Button>
