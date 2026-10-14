@@ -122,9 +122,9 @@ export default function Hero() {
     <section className="h-svh min-h-[600px] p-1.5 md:min-h-[640px] md:p-2.5">
       <div ref={frame} className="relative h-full origin-top overflow-hidden rounded-[26px] bg-[#1a2a3a] will-change-transform md:rounded-panel">
         <img
-          src="/img/projects/hero-track.jpg"
+          src="/img/projects/hero-lanes.jpg"
           alt="Synthetic athletic track and stadium built by Equinox"
-          className="absolute inset-0 size-full animate-hero-zoom object-cover object-[50%_60%]"
+          className="absolute inset-0 size-full animate-hero-zoom object-cover object-[50%_52%]"
         />
         <div
           className="absolute inset-0"
