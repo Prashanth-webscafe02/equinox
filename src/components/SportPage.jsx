@@ -36,6 +36,14 @@ export default function SportPage() {
       {/* hero */}
       <section className="h-[82svh] min-h-[560px] p-1.5 md:p-2.5">
         <div className="relative h-full overflow-hidden rounded-[26px] bg-[#2f8f7a] md:rounded-panel">
+          {/* pos picks which part of the photo the crop keeps; shade sets how dark the overlay is */}
+          <img key={slug} src={page.img} alt={`${page.title} built by Equinox`}
+            className="absolute inset-0 size-full animate-hero-zoom object-cover"
+            style={{ objectPosition: page.pos ?? '50% 50%' }} />
+          {/* dark overlay so the white text stays readable over any photo */}
+          <div className="absolute inset-0 bg-black" style={{ opacity: page.shade ?? 0.3 }} />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent to-60%" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
 
           <nav aria-label="Breadcrumb" className="glass-dark absolute top-[76px] left-1/2 flex h-9 -translate-x-1/2 items-center gap-2 rounded-full px-4 text-[13px] whitespace-nowrap md:top-[84px]">
             <Link to="/" className="text-white/70 hover:text-white">Home</Link>

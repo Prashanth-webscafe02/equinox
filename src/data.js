@@ -36,7 +36,7 @@ export const surfaces = [
   { name: 'Athletic Synthetic Tracks', tx: 'tx-track', where: 'Outdoor', img: '/img/projects/stadium-track.jpg',
     text: 'Rubber-based running track systems with lane markings, built for steady footing in training and competition.',
     tags: ['Running tracks', 'Schools', 'Stadiums'] },
-  { name: 'Rubber Tile', tx: 'tx-rubber', where: 'Indoor', img: '/img/gym.jpg',
+  { name: 'Rubber Tile', tx: 'tx-rubber', where: 'Indoor', img: '/img/projects/gym-rubber-floor.jpg',
     text: 'Dense interlocking rubber tiles that absorb dropped weights and machine vibration, and protect the slab underneath.',
     tags: ['Gyms', 'Fitness studios', 'Weight rooms'] },
   { name: 'Wooden Flooring', tx: 'tx-wood', where: 'Indoor', img: '/img/projects/squash-court.jpg',
@@ -65,7 +65,7 @@ export const sports = [
     field: 'M3 16a21 13 0 1 0 42 0a21 13 0 1 0-42 0M21 10h6v12h-6zM21 12h6M21 20h6' },
   { name: 'Football', note: 'Artificial turf pitches', img: '/img/projects/football-turf.jpg',
     field: `${box}M24 4v24${ring(24, 16, 4)}M4 10h6v12H4M44 10h-6v12h6M4 13h2v6H4M44 13h-2v6h2` },
-  { name: 'Gym', note: 'Rubber & wooden flooring', img: '/img/gym.jpg',
+  { name: 'Gym', note: 'Rubber & wooden flooring', img: '/img/projects/gym-bikes.jpg',
     field: 'M14 16h20M8 10h4v12H8zM36 10h4v12h-4zM12 12h2v8h-2zM34 12h2v8h-2zM5 14h3v4H5zM40 14h3v4h-3z' },
   { name: 'Hockey', note: 'Synthetic turf fields', img: '/img/projects/football-turf.jpg',
     field: `${box}M24 4v24M14 4v24M34 4v24M4 9a7 7 0 0 1 0 14M44 9a7 7 0 0 0 0 14` },
@@ -77,12 +77,12 @@ export const sports = [
 
 // icon: SVG path data drawn with a 1.6 stroke
 export const services = [
-  { title: 'Turnkey projects', text: 'One team from concept to handover: civil base, surface, fencing, lighting and finishing.', img: '/img/rooftop-night.jpg', size: 'big' },
+  { title: 'Turnkey projects', text: 'One team from concept to handover: civil base, surface, fencing, lighting and finishing.', img: '/img/projects/turnkey-tennis.jpg', size: 'big' },
   { title: 'Consultancy & design', text: 'Site study, layout planning and surface selection before a single bag of material arrives.', icon: 'M4 20V9l8-5 8 5v11M9 20v-6h6v6' },
   { title: 'LED lighting', text: 'Even, glare-controlled floodlighting so play continues well after sunset.', icon: 'M12 3v3M5.6 5.6l2.1 2.1M3 12h3M18.4 5.6l-2.1 2.1M21 12h-3M16 14a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z' },
   { title: 'Chain link fencing', text: 'Galvanised, coated perimeter fencing that keeps the ball in and the court secure.', icon: 'M4 4l16 16M20 4L4 20M4 12h16M12 4v16' },
   { title: 'Structures', text: 'Roofing and covered structures for all-weather courts and spectator areas.', icon: 'M3 20h18M5 20V10l7-6 7 6v10' },
-  { title: 'Steam & sauna', text: 'Recovery rooms for clubs, gyms and residences.', img: '/img/indoor-hall.jpg', size: 'wide' },
+  { title: 'Steam & sauna', text: 'Recovery rooms for clubs, gyms and residences.', img: '/img/projects/campus-basketball.jpg', size: 'wide' },
 ]
 
 export const steps = [
@@ -194,5 +194,5 @@ export const builds = [
   { name: 'Cricket nets', sport: 'Cricket', img: '/img/projects/cricket-nets.jpg', text: 'Turf practice lanes with netting and lighting.' },
   { name: 'Basketball courts', sport: 'Basketball', img: '/img/projects/school-basketball.jpg', text: 'Indoor and outdoor courts, marked to standard.' },
   { name: 'Multi-sport courts', sport: 'Volleyball', img: '/img/projects/multi-court-aerial.jpg', text: 'One surface, several games: volleyball, badminton and basketball.' },
-  { name: 'Gym floors', sport: 'Gym', img: '/img/gym.jpg', text: 'Rubber and wooden flooring that takes heavy, everyday training.' },
+  { name: 'Gym floors', sport: 'Gym', img: '/img/projects/gym-cardio.jpg', text: 'Rubber and wooden flooring that takes heavy, everyday training.' },
 ]

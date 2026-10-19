@@ -121,6 +121,20 @@ export default function Hero() {
   return (
     <section className="h-svh min-h-[600px] p-1.5 md:min-h-[640px] md:p-2.5">
       <div ref={frame} className="relative h-full origin-top overflow-hidden rounded-[26px] bg-[#2f8f7a] will-change-transform md:rounded-panel">
+        <img
+          src="/img/projects/football-turf.jpg"
+          alt="Synthetic grass football turf built by Equinox"
+          className="absolute inset-0 size-full animate-hero-zoom object-cover object-[50%_60%]"
+        />
+        {/* light shading only where the text sits, so the turf stays clear */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'linear-gradient(90deg, rgb(10 12 16 / .45) 0%, transparent 55%), linear-gradient(180deg, rgb(10 12 16 / .2) 0%, transparent 25%, transparent 50%, rgb(10 12 16 / .65) 100%)',
+          }}
+        />
+
         <Island />
 
         <div className="absolute bottom-[clamp(28px,6vw,64px)] left-[clamp(20px,5vw,64px)] max-w-[680px] pr-5 text-white">
