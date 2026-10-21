@@ -28,7 +28,7 @@ export default function Process() {
           <Eyebrow n="04" light>Game plan</Eyebrow>
           <h2 className="h2">From empty plot<br />to first whistle.</h2>
           {/* stopwatch */}
-          <div className="relative mt-14 hidden size-[150px] md:block" aria-hidden="true">
+          <div className="relative mt-10 size-[120px] md:mt-14 md:size-[150px]" aria-hidden="true">
             <svg viewBox="0 0 150 150" className="size-full fill-none">
               <rect x="66" y="0" width="18" height="8" rx="3" className="fill-white/25" />
               <rect x="72" y="7" width="6" height="7" className="fill-white/25" />
@@ -44,7 +44,7 @@ export default function Process() {
                 <circle r="3" className="fill-white" />
               </g>
             </svg>
-            <span className="absolute inset-x-0 bottom-[30px] text-center font-mono text-xs tracking-[0.12em] text-white/60">
+            <span className="absolute inset-x-0 bottom-[24px] text-center font-mono text-[10px] md:bottom-[30px] md:text-xs tracking-[0.12em] text-white/60">
               STEP {String(active + 1).padStart(2, '0')}
             </span>
           </div>
