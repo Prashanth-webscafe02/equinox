@@ -29,16 +29,16 @@ export default function Process() {
 
   return (
     <section className="mx-1.5 rounded-panel bg-ink py-[clamp(96px,12vw,160px)] text-white md:mx-2.5">
-      <Wrap className="grid gap-8 md:grid-cols-2 md:gap-16">
-        {/* mobile: column dissolves so the stopwatch sticks for the whole list */}
+      <Wrap className="grid grid-cols-[64px_1fr] gap-x-3 gap-y-8 md:grid-cols-2 md:gap-16">
+        {/* mobile: column dissolves so the stopwatch gets its own sticky lane beside the list */}
         <div className="contents md:block md:sticky md:top-[120px] md:self-start">
-          <div>
+          <div className="col-span-2">
             <Eyebrow n="04" light>Game plan</Eyebrow>
             <h2 className="h2">From empty plot<br />to first whistle.</h2>
           </div>
           {/* stopwatch */}
           <div
-            className="sticky top-[76px] z-10 -mt-4 size-[88px] self-start justify-self-end md:relative md:top-auto md:mt-14 md:size-[150px] md:justify-self-auto"
+            className="sticky top-[76px] size-16 self-start md:relative md:top-auto md:mt-14 md:size-[150px]"
             aria-hidden="true"
           >
             <svg viewBox="0 0 150 150" className="size-full fill-none">
@@ -56,7 +56,7 @@ export default function Process() {
                 <circle r="3" className="fill-white" />
               </g>
             </svg>
-            <span className="absolute inset-x-0 bottom-[16px] text-center font-mono text-[8px] md:bottom-[30px] md:text-xs tracking-[0.12em] text-white/60">
+            <span className="absolute inset-x-0 top-full mt-1.5 text-center font-mono text-[10px] tracking-[0.12em] text-white/60 md:top-auto md:bottom-[30px] md:mt-0 md:text-xs">
               STEP {String(active + 1).padStart(2, '0')}
             </span>
           </div>
