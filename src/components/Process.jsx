@@ -24,11 +24,17 @@ export default function Process() {
   return (
     <section className="mx-1.5 rounded-panel bg-ink py-[clamp(96px,12vw,160px)] text-white md:mx-2.5">
       <Wrap className="grid gap-8 md:grid-cols-2 md:gap-16">
-        <div className="self-start md:sticky md:top-[120px]">
-          <Eyebrow n="04" light>Game plan</Eyebrow>
-          <h2 className="h2">From empty plot<br />to first whistle.</h2>
+        {/* mobile: column dissolves so the stopwatch sticks for the whole list */}
+        <div className="contents md:block md:sticky md:top-[120px] md:self-start">
+          <div>
+            <Eyebrow n="04" light>Game plan</Eyebrow>
+            <h2 className="h2">From empty plot<br />to first whistle.</h2>
+          </div>
           {/* stopwatch */}
-          <div className="relative mt-10 size-[120px] md:mt-14 md:size-[150px]" aria-hidden="true">
+          <div
+            className="sticky top-[76px] z-10 -mt-4 size-[88px] self-start justify-self-end rounded-full bg-ink ring-1 ring-white/10 md:relative md:top-auto md:mt-14 md:size-[150px] md:justify-self-auto md:rounded-none md:bg-transparent md:ring-0"
+            aria-hidden="true"
+          >
             <svg viewBox="0 0 150 150" className="size-full fill-none">
               <rect x="66" y="0" width="18" height="8" rx="3" className="fill-white/25" />
               <rect x="72" y="7" width="6" height="7" className="fill-white/25" />
@@ -44,7 +50,7 @@ export default function Process() {
                 <circle r="3" className="fill-white" />
               </g>
             </svg>
-            <span className="absolute inset-x-0 bottom-[24px] text-center font-mono text-[10px] md:bottom-[30px] md:text-xs tracking-[0.12em] text-white/60">
+            <span className="absolute inset-x-0 bottom-[16px] text-center font-mono text-[8px] md:bottom-[30px] md:text-xs tracking-[0.12em] text-white/60">
               STEP {String(active + 1).padStart(2, '0')}
             </span>
           </div>
