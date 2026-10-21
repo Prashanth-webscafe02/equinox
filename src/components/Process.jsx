@@ -8,9 +8,12 @@ const TICKS = Array.from({ length: 60 }, (_, i) => i)
 
 export default function Process() {
   const list = useRef(null)
+  const ring = useRef(null)
+  const hand = useRef(null)
   const [active, setActive] = useState(0)
-  const [progress, setProgress] = useState(0)
+  const [ticks, setTicks] = useState(0)
 
+  // ring + hand are written straight to the DOM each frame; state only changes per tick/step
   useScroll(() => {
     const vh = window.innerHeight
     const items = [...list.current.children]
@@ -18,7 +21,10 @@ export default function Process() {
     items.forEach((el, i) => { if (el.getBoundingClientRect().top < vh * 0.6) a = i })
     setActive(a)
     const r = list.current.getBoundingClientRect()
-    setProgress(clamp((vh * 0.6 - r.top) / r.height, 0, 1))
+    const p = clamp((vh * 0.6 - r.top) / r.height, 0, 1)
+    ring.current.style.strokeDashoffset = RING - RING * p
+    hand.current.setAttribute('transform', `rotate(${p * 360})`)
+    setTicks(Math.floor(p * 60))
   })
 
   return (
@@ -32,7 +38,7 @@ export default function Process() {
           </div>
           {/* stopwatch */}
           <div
-            className="sticky top-[76px] z-10 -mt-4 size-[88px] self-start justify-self-end rounded-full bg-ink ring-1 ring-white/10 md:relative md:top-auto md:mt-14 md:size-[150px] md:justify-self-auto md:rounded-none md:bg-transparent md:ring-0"
+            className="sticky top-[76px] z-10 -mt-4 size-[88px] self-start justify-self-end md:relative md:top-auto md:mt-14 md:size-[150px] md:justify-self-auto"
             aria-hidden="true"
           >
             <svg viewBox="0 0 150 150" className="size-full fill-none">
@@ -41,12 +47,12 @@ export default function Process() {
               <g transform="translate(75 82)">
                 {TICKS.map(i => (
                   <line key={i} y1={-62} y2={i % 5 ? -58 : -55} transform={`rotate(${i * 6})`}
-                    className={i / 60 <= progress ? 'stroke-accent' : 'stroke-white/20'} strokeWidth={i % 5 ? 1 : 1.6} />
+                    className={i <= ticks ? 'stroke-accent' : 'stroke-white/20'} strokeWidth={i % 5 ? 1 : 1.6} />
                 ))}
                 <circle r="50" className="stroke-white/10" strokeWidth="5" />
-                <circle r="50" className="stroke-accent" strokeWidth="5" strokeLinecap="round" transform="rotate(-90)"
-                  strokeDasharray={RING} strokeDashoffset={RING - RING * progress} />
-                <line y2={-38} className="stroke-white" strokeWidth="2" strokeLinecap="round" transform={`rotate(${progress * 360})`} />
+                <circle ref={ring} r="50" className="stroke-accent" strokeWidth="5" strokeLinecap="round" transform="rotate(-90)"
+                  strokeDasharray={RING} strokeDashoffset={RING} />
+                <line ref={hand} y2={-38} className="stroke-white" strokeWidth="2" strokeLinecap="round" />
                 <circle r="3" className="fill-white" />
               </g>
             </svg>
