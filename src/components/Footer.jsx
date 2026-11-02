@@ -117,7 +117,7 @@ export default function Footer() {
         ))}
       </Wrap>
       <Wrap className="mt-14 flex flex-col justify-between gap-4 border-t border-line pt-6 text-sm sm:flex-row">
-        <span>© {new Date().getFullYear()} Equinox Sports Infra. All rights reserved.</span>
+        <span><span aria-hidden="true" className="text-[1.57em] leading-[0] align-[-0.27em]">©</span><span className="sr-only">Copyright</span> {new Date().getFullYear()} Equinox Sports Infra. All rights reserved.</span>
         <a href="#top" onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }} className="hover:text-accent">Back to top ↑</a>
       </Wrap>
     </footer>
